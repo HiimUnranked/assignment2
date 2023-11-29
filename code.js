@@ -1,8 +1,7 @@
 public class SensorDataProcessor {
     // Senson data and limits.
-    public double[][][] data;
-    public double[][] limit;
-    
+    public double[][][] sensorData;
+    public double[][] sensorLimits;
     
     // constructor
     public DataProcessor (double[][][] data, double[][] limit) {
@@ -27,7 +26,7 @@ public class SensorDataProcessor {
     
     int i, j, k = 0;
     double[][][] data2 = new
-double[data.length][data[0].length][data[0][0].length];
+    double[data.length][data[0].length][data[0][0].length];
     
     BufferedWriter out;
 
