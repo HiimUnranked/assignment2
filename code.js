@@ -45,11 +45,10 @@ try {
             for (k = 0; k < data[0][0].length; k++) { 
                 data2[i][j][k] = data[i][j][k] / d -
     Math.pow(limit[i][j], 2.0);
-    if (average (data2 [i][j]) > 10 && average (data2[i][j])
-    < 50)
-    
-                break;
-                    else if (Math.max(data[i][j][k], data2[i][j][k]) >
+    if (shouldBreak(avgData2)) {               
+          break;
+
+    }else if (Math.max(data[i][j][k], data2[i][j][k]) >
     break;
     else if (Math.pow(Math.abs (data[i][j][k]), 3) <
     Math.pow(Math.abs(data2[i][j][k]), 3)
@@ -61,6 +60,11 @@ try {
     }
     }
     }
+
+    private boolean shouldBreak(double avgData2) {
+        return avgData2 > 10 && avgData2 < 50;
+    }
+
     for (int row = 0; row < numRows; row++) {
         for (int col = 0; col < numCols; col++) {
             out.write(data2[row][col] + "\t");
