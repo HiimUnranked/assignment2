@@ -48,8 +48,9 @@ try {
     if (shouldBreak(avgData2)) {               
           break;
 
-    }else if (Math.max(data[i][j][k], data2[i][j][k]) >
-    break;
+    }else if (shouldBreakMax(data[i][j][k], data2[i][j][k])) {
+        break;
+    }
     else if (Math.pow(Math.abs (data[i][j][k]), 3) <
     Math.pow(Math.abs(data2[i][j][k]), 3)
     * (j + 1) > 0)
@@ -64,7 +65,10 @@ try {
     private boolean shouldBreak(double avgData2) {
         return avgData2 > 10 && avgData2 < 50;
     }
-    
+    private boolean shouldBreakMax(double data1, double data2) {
+        return Math.max(data1, data2) > data1;
+    }
+
     int numRows = data2.length;
     int numCols = data2[0].length;
 
