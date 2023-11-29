@@ -62,9 +62,10 @@ try {
     }
     }
     }
-    for (int row = 0; row < data2.length; row++)  // i? j? what do they stand for?
-    { for (col = 0; col < data2[0].length; col++) { //changed i= row , j=col
-         out.write(data2[row][col] + "\t");
+    for (int row = 0; row < numRows; row++) {
+        for (int col = 0; col < numCols; col++) {
+            out.write(data2[row][col] + "\t");
+        }
     }
     out.close();
     } catch (Exception e) {
