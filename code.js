@@ -36,7 +36,7 @@ double[data.length][data[0].length][data[0][0].length];
 
 
 
-    
+
 // Write racing stats data into a file
 try {
     out = new BufferedWriter(new FileWriter ("RacingStatsData.txt"));
@@ -62,7 +62,9 @@ try {
     }
     }
     }
-    for (i = 0; i < data2.length; i++) { for (j = 0; j < data2[0].length; j++) { out.write(data2[i][j] + "\t");
+    for (int row = 0; row < data2.length; row++)  // i? j? what do they stand for?
+    { for (col = 0; col < data2[0].length; col++) { //changed i= row , j=col
+         out.write(data2[row][col] + "\t");
     }
     out.close();
     } catch (Exception e) {
