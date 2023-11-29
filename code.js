@@ -64,6 +64,9 @@ try {
     private boolean shouldBreak(double avgData2) {
         return avgData2 > 10 && avgData2 < 50;
     }
+    
+    int numRows = data2.length;
+    int numCols = data2[0].length;
 
     for (int row = 0; row < numRows; row++) {
         for (int col = 0; col < numCols; col++) {
